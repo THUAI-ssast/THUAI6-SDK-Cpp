@@ -1,9 +1,9 @@
 # compile all cpp into one main executable
 CC = g++
-CFLAGS = -std=c++11 -lwinpthread -static
-SOURCES = $(wildcard *.cpp sdk/*.cpp)
+CFLAGS = -Wall -Wextra -pedantic -std=c++11
+SOURCES = main.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
-EXECUTABLE = main.exe
+EXECUTABLE = bin.exe
 INCLUDES = .
 
 main: $(OBJECTS)
@@ -13,4 +13,4 @@ main: $(OBJECTS)
 	$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDES)
 
 clean:
-	del main.exe sdk\*.o *.o
+	rm -f bin.exe sdk\*.o *.o
