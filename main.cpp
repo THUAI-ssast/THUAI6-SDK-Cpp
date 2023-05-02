@@ -1,10 +1,10 @@
 #include <random>
 
 #include "sdk/actions.hpp"
+#include "sdk/controller.hpp"
 #include "sdk/datatypes.hpp"
 #include "sdk/utils.hpp"
 
-#include "contestant_code.hpp"
 #include <iostream>
 
 using namespace std;
@@ -85,4 +85,9 @@ Action get_action(json obs) {
         return Move(ForwardOrBackWard::Forward);
 
     return Idle();
+}
+
+int main() {
+    run_ai(init, get_action);
+    return 0;
 }

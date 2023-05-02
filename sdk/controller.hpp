@@ -1,11 +1,12 @@
+#ifndef CONTROLLER_HPP
+#define CONTROLLER_HPP
+
 #include <iostream>
 #include <thread>
 #include <nlohmann/json.hpp>
 
 using namespace std;
 using json = nlohmann::json;
-
-#include "contestant_code.hpp"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ string input() {
     return line;
 }
 
-int main() {
+int run_ai(void (*init)(json), json (*get_action)(json)) {
     FILE* logfile = fopen("ai.log", "w");
     string line;
 
@@ -49,3 +50,5 @@ int main() {
         cout << action.dump() << endl;
     }
 }
+
+#endif // CONTROLLER_HPP
