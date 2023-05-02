@@ -137,7 +137,7 @@ struct Player
 {
     // static const
     float MAX_VELOCITY = 4.0;
-    float ROTATION_SPEED = 600.0;
+    float ROTATION_SPEED = 150.0;
     int MAX_HP = 100;
     int MAX_AMMO = 30;
     int MAX_BOMB_COUNT = 1;
